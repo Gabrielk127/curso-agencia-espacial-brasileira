@@ -21,14 +21,16 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Link
-                href="https://instagram.com"
+              target="_blank"
+                href="https://www.instagram.com/ifpr.aeb/"
                 className="text-blue-200 hover:text-white transition-colors"
               >
                 <Instagram className="h-6 w-6" />
                 <span className="sr-only">Instagram</span>
               </Link>
               <Link
-                href="https://linkedin.com"
+              target="_blank"
+                href="https://www.linkedin.com/company/ifpr-aeb/"
                 className="text-blue-200 hover:text-white transition-colors"
               >
                 <Linkedin className="h-6 w-6" />
@@ -117,10 +119,10 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-blue-800 text-center text-blue-300 text-sm">
-          <Link href="https://prof-rodolfo-barriviera.vercel.app/termos-de-uso">
+          <Link target="_blank" href="https://prof-rodolfo-barriviera.vercel.app/termos-de-uso">
             <p>Termos de uso</p>
           </Link>
-          <Link href="https://prof-rodolfo-barriviera.vercel.app/politicas-de-privacidade">
+          <Link target="_blank" href="https://prof-rodolfo-barriviera.vercel.app/politicas-de-privacidade">
             <p>Políticas de privacidade</p>
           </Link>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const CallToAction = () => {
   return (
@@ -26,12 +27,14 @@ const CallToAction = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
+            <Link target="_blank" href='https://docs.google.com/forms/d/e/1FAIpQLSfq00RIPollGqeJsmqaYqWOpm9ZfP6-pITh1ziyYypT-xCuCQ/viewform'>
             <Button
               size="lg"
               className="bg-white text-blue-600 hover:bg-blue-50 text-lg font-bold"
-            >
+              >
               QUERO ME INSCREVER
             </Button>
+              </Link>
           </motion.div>
         </motion.div>
       </div>

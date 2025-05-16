@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 
 const Hero = () => {
@@ -69,15 +69,19 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
+              <Link target="_blank" href='https://docs.google.com/forms/d/e/1FAIpQLSfq00RIPollGqeJsmqaYqWOpm9ZfP6-pITh1ziyYypT-xCuCQ/viewform'>
               <Button className="bg-blue-600 hover:bg-blue-700 text-lg h-12 cursor-pointer">
                 Quero me Inscrever
               </Button>
+              </Link>
+              <Link href='#curso'>
               <Button
                 variant="outline"
                 className="border-blue-600 text-blue-600 hover:bg-blue-50 text-lg h-12 cursor-pointer"
-              >
+                >
                 Conheça o Curso <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
+                  </Link>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -89,18 +93,31 @@ const Hero = () => {
                 ACOMPANHE NAS REDES SOCIAIS
               </p>
               <div className="flex justify-center lg:justify-start space-x-4">
-                <Link
-                  href="https://instagram.com"
-                  className="text-blue-600 hover:text-blue-800 transition-colors"
-                >
-                  INSTAGRAM
-                </Link>
-                <Link
-                  href="https://linkedin.com"
-                  className="text-blue-600 hover:text-blue-800 transition-colors"
-                >
-                  LINKEDIN
-                </Link>
+                <div className="flex space-x-4">
+              <Link
+              target="_blank"
+                href="https://www.instagram.com/ifpr.aeb/"
+                className="text-blue-500 hover:text-blue-600 transition-colors"
+              >
+                <Instagram className="h-6 w-6" />
+                <span className="sr-only">Instagram</span>
+              </Link>
+              <Link
+              target="_blank"
+                href="https://www.linkedin.com/company/ifpr-aeb/"
+                className="text-blue-500 hover:text-blue-600 transition-colors"
+              >
+                <Linkedin className="h-6 w-6" />
+                <span className="sr-only">LinkedIn</span>
+              </Link>
+              {/* <Link
+                href="mailto:contato@startupspace.com.br"
+                className="text-blue-200 hover:text-white transition-colors"
+              >
+                <Mail className="h-6 w-6" />
+                <span className="sr-only">Email</span>
+              </Link> */}
+            </div>
               </div>
             </motion.div>
           </motion.div>

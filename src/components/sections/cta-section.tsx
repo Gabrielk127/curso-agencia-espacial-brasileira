@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export function CTASection() {
   return (
@@ -33,12 +34,14 @@ export function CTASection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
+              <Link target="_blank" href='https://docs.google.com/forms/d/e/1FAIpQLSfq00RIPollGqeJsmqaYqWOpm9ZfP6-pITh1ziyYypT-xCuCQ/viewform'>
               <Button
                 size="lg"
                 className="bg-white text-blue-600 hover:bg-blue-50 text-lg font-bold cursor-pointer"
-              >
+                >
                 Quero me Inscrever
               </Button>
+                </Link>
             </motion.div>
           </div>
         </motion.div>

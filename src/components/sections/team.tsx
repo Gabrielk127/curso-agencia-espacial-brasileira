@@ -1,10 +1,12 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Mail } from "lucide-react";
+import { Link as IconLink } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import Image from "next/image";
+import Link from "next/link";
 
 const TeamSection = () => {
   const teamMembers = [
@@ -12,36 +14,50 @@ const TeamSection = () => {
       name: "Rodolfo Barriviera",
       role: "Professor e Coordenador Nacional",
       image: "/wall-aeb.png?height=200&width=200",
+      email: "rodolfo.barriviera@ifpr.edu.br",
+      lattes: "http://lattes.cnpq.br/6966615403860909",
     },
     {
       name: "Anderson Emidio",
       role: "Professor",
       image: "/wall-aeb.png?height=200&width=200",
+      email: "macedo.anderson@gmail.com",
+      lattes: "http://lattes.cnpq.br/0959412411005289",
     },
     {
       name: "Antônio Augusto",
       role: "Professor",
       image: "/wall-aeb.png?height=200&width=200",
+      email: "augusto.ferreira@ifpr.edu.br",
+      lattes: "http://lattes.cnpq.br/8081604140365664",
     },
     {
       name: "Marlon Silvestre",
       role: "Professor",
       image: "/wall-aeb.png?height=200&width=200",
+      email: "marlon.kierecz@ifpr.edu.br",
+      lattes: "http://lattes.cnpq.br/9724373037298266",
     },
     {
       name: "Ricardo Luíz",
       role: "Professor",
       image: "/wall-aeb.png?height=200&width=200",
+      email: "ricardo.tows@ifpr.edu.br",
+      lattes: "http://lattes.cnpq.br/9008150713371234",
     },
     {
       name: "Rodrigo Barriviera",
       role: "Professor",
       image: "/wall-aeb.png?height=200&width=200",
+      email: "rodrigo.barriviera@ifpr.edu.br",
+      lattes: "http://lattes.cnpq.br/9458769391404977",
     },
     {
       name: "Willian Borges",
       role: "Professor",
       image: "/wall-aeb.png?height=200&width=200",
+      email: "william.borges@ifpr.edu.br",
+      lattes: "http://lattes.cnpq.br/1301478454424902",
     },
   ];
 
@@ -181,7 +197,13 @@ const TeamSection = () => {
 const TeamMemberCard = ({
   member,
 }: {
-  member: { name: string; role: string; image: string };
+  member: {
+    name: string;
+    role: string;
+    image: string;
+    email: string;
+    lattes: string;
+  };
 }) => {
   return (
     <Card className="overflow-hidden h-full border-blue-100 hover:border-blue-300 transition-colors">
@@ -199,13 +221,16 @@ const TeamMemberCard = ({
       </CardHeader>
       <CardContent>
         <p className="text-gray-600">{member.role}</p>
-        <div className="mt-3 flex items-center">
-          <div className="h-6 w-8 bg-blue-100 rounded-full flex items-center justify-center mr-2">
-            <span className="text-xs text-blue-600 font-bold">IF</span>
-          </div>
-          <div className="h-6 w-8 bg-blue-100 rounded-full flex items-center justify-center">
-            <span className="text-xs text-blue-600 font-bold">AEB</span>
-          </div>
+
+        <div className="mt-2 flex flex-row gap-2">
+          {member.email && (
+            <Link href={`mailto:${member.email}`}>
+              <Mail className="h-6 w-6 text-blue-400 hover:text-blue-500 cursor-pointer" />
+            </Link>
+          )}
+          <Link href={member.lattes} target="_blank" rel="noopener noreferrer">
+            <IconLink className="h-6 w-6 text-blue-400 hover:text-blue-500 cursor-pointer" />
+          </Link>
         </div>
       </CardContent>
     </Card>

@@ -7,6 +7,7 @@ import FaqSection from "@/components/sections/faq";
 import CertificateSection from "@/components/sections/certificate";
 import Partners from "@/components/sections/partners";
 import { CTASection } from "@/components/sections/cta-section";
+import ShowcaseCarousel from "@/components/sections/showcase-carousel";
 
 export const metadata: Metadata = {
   title: "Crie Sua Própria Startup | Curso Gratuito",
@@ -19,6 +20,7 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <Hero />
       <Partners />
+      <ShowcaseCarousel />
       <CourseFeatures />
       <CourseModules />
       <CTASection />

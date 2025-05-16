@@ -120,3 +120,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scroll-padding-top: 100px;
+  width: 100%;
+  height: 100%;
+}

@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +31,12 @@ const Header = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-          ></motion.div>
+            className="flex flex-row gap-2"
+          >
+            <Image alt="Logo Agência Espacial Brasileira" src='/aeb-header.png' width={40} height={80} className="w-14"/>
+            <Image alt="Logo Agência Espacial Brasileira" src='/ifpr-header.png' width={40} height={80} className="h-8"/>
+
+          </motion.div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -57,12 +63,14 @@ const Header = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
+            <Link target="_blank" href='https://docs.google.com/forms/d/e/1FAIpQLSfq00RIPollGqeJsmqaYqWOpm9ZfP6-pITh1ziyYypT-xCuCQ/viewform'>
             <Button
               size="lg"
               className="bg-blue-600 hover:bg-blue-700 cursor-pointer"
-            >
+              >
               Inscreva-se
             </Button>
+              </Link>
           </motion.div>
         </nav>
 
@@ -75,9 +83,9 @@ const Header = () => {
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-8 w-8" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-8 w-8" />
             )}
           </Button>
         </div>
@@ -105,12 +113,14 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+            <Link target="_blank" href='https://docs.google.com/forms/d/e/1FAIpQLSfq00RIPollGqeJsmqaYqWOpm9ZfP6-pITh1ziyYypT-xCuCQ/viewform'>
             <Button
               size="lg"
               className="bg-blue-600 hover:bg-blue-700 w-full cursor-pointer"
-            >
+              >
               Inscreva-se
             </Button>
+              </Link>
           </div>
         </motion.div>
       )}
@@ -119,3 +129,4 @@ const Header = () => {
 };
 
 export default Header;
+
